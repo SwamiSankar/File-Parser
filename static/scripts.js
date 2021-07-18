@@ -1,6 +1,5 @@
+let url = window.location.href;
 $(document).ready(function () {
-  let url = window.location.href;
-
   //We use this AJAX call to get the list of files from the server and populate it in drop-down
   $.ajax({
     type: "GET",
@@ -62,7 +61,7 @@ const getData = () => {
     filename: selectedFile,
     columns: columns,
   };
-  let url = window.location.href;
+
   //Making the POST API call to fetch the data
   $.ajax({
     type: "POST",
