@@ -25,7 +25,5 @@ def getFiles():
     except:
         return 'NO Files Found', 400
 
-    print(formated_files)
-
     # Returning list of files into JSON format
     return jsonify(formated_files)
