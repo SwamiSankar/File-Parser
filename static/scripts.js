@@ -62,7 +62,7 @@ const getData = () => {
     filename: selectedFile,
     columns: columns,
   };
-
+  let url = window.location.href;
   //Making the POST API call to fetch the data
   $.ajax({
     type: "POST",
