@@ -17,6 +17,7 @@ $(document).ready(function () {
     },
     error: function (error) {
       console.log("error", error);
+      alert("Error Occured in fetching files");
     },
   });
 
@@ -42,6 +43,7 @@ $(document).ready(function () {
     },
     error: function (error) {
       console.log("error", error);
+      alert("Error Occured in Searching Columns");
     },
   });
 });
@@ -55,7 +57,10 @@ const getData = () => {
   $("#check-box-contents input:checked").each(function () {
     columns.push($(this).attr("value"));
   });
-
+  if (columns.length < 1 || selectedFile == "select option") {
+    alert("Please dont leave the selections blank");
+    return;
+  }
   //Preparing Request Data
   let request = {
     filename: selectedFile,
@@ -79,6 +84,7 @@ const getData = () => {
       $("#result-table tr").remove();
       //Hiding the results
       $(".results-container").hide();
+      alert("Error in generating data");
       console.log("error", error);
     },
     contentType: "application/json",
