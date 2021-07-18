@@ -6,12 +6,13 @@ from apis.getcolumns import getcolumns
 from apis.getdata import getdata
 import os
 
-#Getting the file path from command line
-file = sys.argv[1]
+# Getting the file path from command line
+# file = sys.argv[1]
 
-#Setting the environment variable 
-os.environ['FILE_PATH'] = '{}\*.csv'.format(file)
-os.environ['FILE_PATH_REDUCED'] = '{}\\'.format(file)
+# Setting the environment variable
+# os.environ['FILE_PATH'] = '{}\*.csv'.format(file)
+# os.environ['FILE_PATH_REDUCED'] = '{}\\'.format(file)
+
 
 app = Flask(__name__)
 
