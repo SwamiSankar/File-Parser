@@ -18,7 +18,6 @@ def getFiles():
     # Retrieve csv files present inside the Files folder
     try:
         files = (glob.glob(FILE_DIR))
-        print(files)
         for file in files:
             formated_files.append(file.replace(
                 FILE_DIR_REDUCED, ''))
