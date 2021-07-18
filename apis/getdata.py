@@ -1,6 +1,7 @@
 from flask import Blueprint, request
 import pandas as pd
 import os
+from utils.util import FILE_DIR_REDUCED
 
 getdata = Blueprint('getdata', __name__,
                     static_folder='static', template_folder='templates')
@@ -19,7 +20,7 @@ def getData():
         try:
 
             filename = '{}{}'.format(
-                os.environ.get('FILE_PATH_REDUCED'), posted_data['filename'])
+                FILE_DIR_REDUCED, posted_data['filename'])
 
             columns = posted_data['columns']
             if not columns:

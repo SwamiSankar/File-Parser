@@ -2,6 +2,7 @@ from flask.json import jsonify
 from flask import Blueprint
 import glob
 import os
+from utils.util import FILE_DIR, FILE_DIR_REDUCED
 
 getfiles = Blueprint('getfiles', __name__,
                      static_folder='static', template_folder='templates')
@@ -16,13 +17,16 @@ def getFiles():
 
     # Retrieve csv files present inside the Files folder
     try:
-        files = (glob.glob(os.environ.get('FILE_PATH')))
+        files = (glob.glob(FILE_DIR))
+        print(files)
         for file in files:
             formated_files.append(file.replace(
-                os.environ.get('FILE_PATH_REDUCED'), ''))
+                FILE_DIR_REDUCED, ''))
 
     except:
         return 'NO Files Found', 400
+
+    print(formated_files)
 
     # Returning list of files into JSON format
     return jsonify(formated_files)
