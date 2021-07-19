@@ -2,7 +2,7 @@ import glob
 from flask import Blueprint, jsonify
 import csv
 import os
-from utils.util import FILE_DIR
+
 
 getcolumns = Blueprint('getcolumns', __name__,
                        static_folder='static', template_folder='templates')
@@ -13,7 +13,7 @@ getcolumns = Blueprint('getcolumns', __name__,
 @getcolumns.route('/getColumns')
 def getColumns():
 
-    files = (glob.glob(FILE_DIR))
+    files = (glob.glob(os.environ['FILE_PATH']))
 
     # Storing the column titles from the first file of the list
     with open(files[0], "r") as f:
