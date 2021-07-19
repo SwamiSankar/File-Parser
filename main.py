@@ -7,14 +7,6 @@ from apis.getdata import getdata
 import os
 from Files import file_path
 
-# Getting the file path from command line
-# file = sys.argv[1]
-
-# Setting the environment variable
-# os.environ['FILE_PATH'] = FILE_DIR
-# os.environ['FILE_PATH_REDUCED'] = FILE_DIR_REDUCED
-
-print(os.getenv('FILE_PATH'))
 
 app = Flask(__name__)
 
